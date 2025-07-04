@@ -1,0 +1,54 @@
+void setup() {
+ pinMode(D6,OUTPUT);
+ pinMode(D7,OUTPUT);
+ Serial.begin(9600);
+}
+
+void loop() {
+   if (Serial.available() > 0) 
+   { 
+      char x=Serial.read();
+  
+  if(x=='G')
+  {
+  digitalWrite(D6,HIGH);
+  digitalWrite(D6,LOW);
+  Serial.print("Green is ON:"); 
+  }
+
+  
+  else if(x=='R')
+  {
+  digitalWrite(D7,HIGH);
+  Serial.print("red is ON:"); 
+  }
+
+ 
+  else if(x=='r')
+  {
+  digitalWrite(D7,LOW);
+  Serial.print("red is OFF:");
+  }
+
+  
+ else if(x=='g')
+ { 
+  digitalWrite(D6,HIGH);
+  digitalWrite(D7,HIGH);
+  Serial.print("Yellow is ON:"); 
+ }
+ 
+ else if(x=='O')
+  {
+  digitalWrite(D6,LOW);
+  digitalWrite(D7,LOW);
+   Serial.print("led is OFF:");  
+ }
+}
+}
+ 
+ 
+ 
+
+  
+
